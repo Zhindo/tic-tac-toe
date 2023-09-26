@@ -82,16 +82,17 @@ class Second < Person
 
 end
 
-def game(first_player, second_player)
+def game(first_player, second_player, board)
 
-    print first_player.show_score
+    round = 0
 
-    first_player.add_score
+    while round != 1
 
-    print first_player.show_score
+        puts "\n" + board + "\n"
 
-    if first_player.score == 1
-        puts "#{first_player.name} won"
+        puts "#{first_player.name}: #{first_player.score} | #{second_player.name}: #{second_player.score}"
+        round += 1
+    
     end
 
 end
@@ -109,4 +110,4 @@ temp = gets.chomp
 
 second_player = Second.new("#{temp}")
 
-game(first_player, second_player)
+game(first_player, second_player, board)
